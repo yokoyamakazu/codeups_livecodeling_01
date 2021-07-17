@@ -1,3 +1,8 @@
+body {
+	position: relative;
+	z-index: -9999;
+}
+
 [data-target] {
 	cursor: pointer;
 }
@@ -442,9 +447,10 @@ summary {
 
 .l-header {
 	left: 0;
+	padding-top: 1.25rem;
 	position: fixed;
 	right: 0;
-	top: 1.25rem;
+	top: 0;
 }
 
 .l-inner {
@@ -453,6 +459,48 @@ summary {
 	max-width: 100%;
 	padding: 0;
 	width: 1000px;
+}
+
+.c-hamburger {
+	z-index: 9999;
+}
+
+.c-hamburger span {
+	background: #fff;
+	display: block;
+	height: 2px;
+	position: relative;
+	transition: ease .5s;
+	width: 22px;
+}
+
+.c-hamburger span:nth-child(1) {
+	top: 0;
+}
+
+.c-hamburger span:nth-child(2) {
+	margin: 4px 0;
+}
+
+.c-hamburger span:nth-child(3) {
+	top: 0;
+}
+
+/* OPEN時の動き */
+
+.c-hamburger.open span:nth-child(1) {
+	top: 5px;
+	transform: rotate(45deg);
+}
+
+.c-hamburger.open span:nth-child(2) {
+	opacity: 0;
+	transform: translateY(-50%);
+}
+
+.c-hamburger.open span:nth-child(3) {
+	top: -7px;
+	transform: rotate(-45deg);
 }
 
 .p-entry-content {
@@ -635,27 +683,128 @@ summary {
 	max-width: 100%;
 }
 
+.p-drawer-menu {
+	background-color: rgba(34, 34, 34, 0.95);
+	display: none;
+	height: 100vh;
+	margin-left: auto;
+	max-width: 32.5rem;
+	text-align: center;
+	width: 100%;
+	z-index: 100;
+}
+
+.p-drawer-menu__logo {
+	padding-top: 11.25rem;
+}
+
+.p-drawer-menu__items {
+	margin-top: 1.25rem;
+}
+
+.p-drawer-menu__item a {
+	color: #fff;
+	display: block;
+	font-family: "Montserrat", sans-serif;
+	font-size: 1.25rem;
+	font-weight: 800;
+	letter-spacing: 0.068em;
+	padding: 0.9375rem 0;
+	text-decoration: none;
+	text-transform: uppercase;
+	width: 100%;
+}
+
 .p-header__inner {
 	padding: 0 0.9375rem;
 }
 
 .p-header__logo {
-	width: 11.25rem;
+	width: 11.8125rem;
+}
+
+.p-header__drawer {
+	position: absolute;
+	right: 3.375rem;
+	top: 1.25rem;
+}
+
+.p-header__menuText {
+	color: #fff;
+	font-family: "Montserrat", sans-serif;
+	font-size: 0.625rem;
+	font-weight: 800;
+	position: absolute;
+	right: 0.875rem;
+	text-transform: uppercase;
+	top: 1.25rem;
+	z-index: 9999;
+}
+
+.p-header__menu {
+	left: 0;
+	overflow: scroll;
+	padding-bottom: 6.25rem;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.p-header__overlay {
+	background-color: rgba(34, 34, 34, 0.6);
+	display: none;
+	height: 100vh;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 99;
 }
 
 .p-mv {
 	height: 100vh;
 	position: relative;
+	z-index: -100;
+}
+
+.p-mv::after {
+	background-color: #222;
+	content: '';
+	height: 100vh;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 75.5%;
+	z-index: -10;
 }
 
 .p-mv__img {
-	content: "";
+	-o-object-fit: cover;
+	-o-object-position: top;
+	content: '';
 	height: 87vh;
 	left: 0;
+	object-fit: cover;
+	object-position: top;
 	position: absolute;
 	top: 0;
 	width: 76.5%;
 	z-index: -9;
+}
+
+.p-mv__img::before {
+	-o-object-fit: cover;
+	-o-object-position: top;
+	background-color: rgba(0, 0, 0, 0.34);
+	content: '';
+	height: 100%;
+	left: 0;
+	object-fit: cover;
+	object-position: top;
+	position: absolute;
+	top: 0;
+	width: 100%;
 }
 
 .p-mv__img img {
@@ -667,27 +816,6 @@ summary {
 	width: 100%;
 }
 
-.p-mv__img::before {
-	background-color: rgba(0, 0, 0, 0.34);
-	content: "";
-	height: 100%;
-	left: 0;
-	position: absolute;
-	top: 0;
-	width: 100%;
-}
-
-.p-mv::after {
-	background-color: #222;
-	content: "";
-	height: 100vh;
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 75.5%;
-	z-index: -10;
-}
-
 .p-mv__block {
 	color: #fff;
 	position: absolute;
@@ -697,13 +825,13 @@ summary {
 }
 
 .p-mv__subtitle {
-	display: block;
 	font-size: 1rem;
 	font-weight: bold;
 	letter-spacing: 0.063em;
 }
 
 .p-mv__subtitle--en {
+	display: block;
 	font-family: "Montserrat", sans-serif;
 	font-size: 1rem;
 	font-weight: bold;
@@ -716,7 +844,7 @@ summary {
 	font-size: 3.5rem;
 	font-weight: 800;
 	letter-spacing: 0.063em;
-	line-height: calc(53 / 56);
+	line-height: 0.94643;
 	margin-top: 0.625rem;
 }
 

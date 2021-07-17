@@ -4,6 +4,23 @@ jQuery(window).on("load", function() {
 	jQuery("body").attr("data-loading", "true");
 });
 
+
+// ナビバートグル クリック動作
+	$('.js-hamburger').on('click', function () {
+		if( $(this).hasClass('open') ) {
+			$(this).removeClass('open');
+			$('.js-drawer-menu').fadeOut(); // ドロワーメニュー
+			$('.js-overlay').fadeOut(); // オーバーレイ
+		} else {
+			$(this).addClass('open');
+			$('.js-drawer-menu').fadeIn(); // ドロワーメニュー
+			$('.js-overlay').fadeIn(); // オーバーレイ
+
+		}
+	});
+
+
+
 jQuery(function() {
 	// スクロール判定
 	jQuery(window).on("scroll", function() {
