@@ -12,10 +12,9 @@
     
     </div>
     <div class="p-header__menu c-hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+        <span class=""></span>
+        <span class=""></span>
+        <span class=""></span>
     </div>
-    あああああ
   </div>
 </header>
