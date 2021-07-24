@@ -65,7 +65,7 @@
   font-size: rem(16);
   font-weight: bold;
   letter-spacing: 0.063em;
-  font-family: $ff-sub;
+  font-family: $font-family-sub;
   display: block;
   margin-top: rem(5);
 }
@@ -74,7 +74,7 @@
   font-size: rem(56);
   font-weight: 800;
   letter-spacing: 0.063em;
-  font-family: $ff-sub;
+  font-family: $font-family-sub;
   line-height: (53 / 56); // カンプの行間の値 / フォントサイズ
   margin-top: rem(10);
 }

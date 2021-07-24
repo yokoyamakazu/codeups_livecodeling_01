@@ -1,7 +1,7 @@
 // ---
 // 色
 // ---
-$cr-m: #666; // ベース色
+$text-color: #666; // ベース色
 $cr-bg: #fff; // 背景
 $cr-txt: #333; // テキスト色
 $cr-table: #eee; // テーブル
@@ -17,10 +17,10 @@ $opacity: 0.7; // 透過度
 $ff-awesome: "Font Awesome 5 Free", sans-serif; // Font Awesome用
 $ff-code: monospace, sans-serif; // コード用
 $fz-base: 16px; // ベースフォントサイズ
-$ff-base: 'Noto Sans JP', sans-serif,
+$font-family-base: 'Noto Sans JP', sans-serif,
 	Meiryo, sans-serif; // ベースフォントサイズ
 
-$ff-sub:	'Montserrat', sans-serif;
+$font-family-sub:	'Montserrat', sans-serif;
 
 $fw-base: 400; // ベースフォントウェイト
 $lh-base: 1.6; // ベース行間
@@ -86,7 +86,7 @@ $cr-form-bd: #ccc; // ボーダー色（デフォルト時）
 $cr-form-bd_active: #ccc; // ボーダー色（アクティブ時）
 
 $cr-check: #ccc; // チェックアイコン色（デフォルト時）
-$cr-check_active: $cr-m; // チェックアイコン色（アクティブ時）
+$cr-check_active: $text-color; // チェックアイコン色（アクティブ時）
 
 $size-checkbox: 26px; // チェックボックスのサイズ
 $size-checkbox-pd_left: 30px; // チェックボックスと文字の余白
